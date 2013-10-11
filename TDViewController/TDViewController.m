@@ -77,6 +77,8 @@
     _tableView.delegate = self;
     _tableView.dataSource = self;
     
+    _tableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    
     [self.view addSubview:_tableView];
     
     self.title = _root.title;
