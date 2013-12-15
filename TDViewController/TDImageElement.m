@@ -37,7 +37,7 @@
     return self;
 }
 
-+(TDImageElement*)imageElementWithTitle:(NSString*)text andValue:(NSString*)value andImage:(UIImage*)image andKey:(NSString*)key
++(TDImageElement*)imageElementWithText:(NSString*)text andValue:(NSString*)value andImage:(UIImage*)image andKey:(NSString*)key
 {
     return [[TDImageElement alloc] initWithText:text andValue:value andImage:image andKey:key];
 }

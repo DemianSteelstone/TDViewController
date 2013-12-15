@@ -138,39 +138,39 @@
     return tdSection.title;
 }
 
--(UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
-{
-    TDSection *tdSection = [_root.sections objectAtIndex:section];
-    CGSize size = [tdSection.title sizeWithFont:[UIFont systemFontOfSize:14]];
-    
-    UILabel *label = [[UILabel alloc] initWithFrame:CGRectNull];
-    label.text = tdSection.title;
-    label.font = [UIFont systemFontOfSize:14];
-    
-    label.textColor = [UIColor whiteColor];
-    label.shadowColor = [UIColor darkGrayColor];
-    label.shadowOffset = CGSizeMake(1, -1);
-    
-    label.textAlignment = NSTextAlignmentCenter;
-    
-    label.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-    
-    label.backgroundColor = [UIColor clearColor];
-    
-    
-    CGRect frame = label.frame;
-    frame.size = size;
-    label.frame = frame;
-    
-    return label;
-}
-
--(float)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
-{
-    TDSection *tdSection = [_root.sections objectAtIndex:section];
-    CGSize size = [tdSection.title sizeWithFont:[UIFont systemFontOfSize:14]];
-    return size.height;
-}
+//-(UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+//{
+//    TDSection *tdSection = [_root.sections objectAtIndex:section];
+//    CGSize size = [tdSection.title sizeWithFont:[UIFont systemFontOfSize:14]];
+//    
+//    UILabel *label = [[UILabel alloc] initWithFrame:CGRectNull];
+//    label.text = tdSection.title;
+//    label.font = [UIFont systemFontOfSize:14];
+//    
+//    label.textColor = [UIColor whiteColor];
+//    label.shadowColor = [UIColor darkGrayColor];
+//    label.shadowOffset = CGSizeMake(1, -1);
+//    
+//    label.textAlignment = NSTextAlignmentCenter;
+//    
+//    label.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+//    
+//    label.backgroundColor = [UIColor clearColor];
+//    
+//    
+//    CGRect frame = label.frame;
+//    frame.size = size;
+//    label.frame = frame;
+//    
+//    return label;
+//}
+//
+//-(float)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+//{
+//    TDSection *tdSection = [_root.sections objectAtIndex:section];
+//    CGSize size = [tdSection.title sizeWithFont:[UIFont systemFontOfSize:14]];
+//    return size.height;
+//}
 
 #pragma mark - Table view delegate
 
