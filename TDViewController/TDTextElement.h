@@ -13,7 +13,7 @@
 @property (nonatomic,strong) NSString *text;
 
 @property (nonatomic,strong) UIFont *elementFont;
-@property (nonatomic) UITextAlignment textAlign;
+@property (nonatomic) NSTextAlignment textAlign;
 
 -(id)initWithText:(NSString*)text;
 +(TDTextElement*)elementWithText:(NSString*)text;

@@ -121,7 +121,7 @@
     return [element createCellIn:tableView indexPath:indexPath];
 }
 
--(float)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     TDElement *element = [_root elementFor:indexPath];
     return [element height];
