@@ -42,9 +42,9 @@
     return [[TDImageElement alloc] initWithText:text andValue:value andImage:image andKey:key];
 }
 
--(float)height
+-(CGFloat)height
 {
-    float returnHeight = [super height];
+    CGFloat returnHeight = [super height];
     if (_image)
         returnHeight = MAX(returnHeight, _image.size.height);
     return returnHeight;

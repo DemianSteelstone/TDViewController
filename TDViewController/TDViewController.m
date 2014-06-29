@@ -165,7 +165,7 @@
 //    return label;
 //}
 //
-//-(float)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+//-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 //{
 //    TDSection *tdSection = [_root.sections objectAtIndex:section];
 //    CGSize size = [tdSection.title sizeWithFont:[UIFont systemFontOfSize:14]];

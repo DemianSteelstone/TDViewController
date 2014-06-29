@@ -14,10 +14,10 @@
 
 @implementation TDMultilineTextElement
 
--(float)height
+-(CGFloat)height
 {
-    float width = [UITableViewCell groupedCellWidth:[UIApplication sharedApplication].statusBarOrientation];
-    float height = [super height];
+    CGFloat width = [UITableViewCell groupedCellWidth:[UIApplication sharedApplication].statusBarOrientation];
+    CGFloat height = [super height];
     
     CGSize size = [self.text sizeWithFont:self.elementFont constrainedToSize:CGSizeMake(width, MAXFLOAT)];
     

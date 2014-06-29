@@ -12,7 +12,7 @@
 
 @property (nonatomic,strong) NSString *key;
 
-@property (nonatomic, getter = height) float height;
+@property (nonatomic, getter = height) CGFloat height;
 @property (nonatomic,copy) void (^didSelectHandler)(TDElement* element);
 
 -(NSString*)toHtml;

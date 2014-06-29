@@ -22,7 +22,7 @@
     return self;
 }
 
--(float)height
+-(CGFloat)height
 {
     return _height;
 }
