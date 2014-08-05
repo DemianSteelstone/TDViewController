@@ -25,7 +25,7 @@
         _label = [[UILabel alloc] initWithFrame:CGRectZero];
         _textField = [[UITextField alloc] initWithFrame:CGRectZero];
         
-        [_textField addTarget:self action:@selector(textChanged) forControlEvents:UIControlEventValueChanged];
+        [_textField addTarget:self action:@selector(textChanged) forControlEvents:UIControlEventEditingChanged];
         
         [self.contentView addSubview:_label];
         [self.contentView addSubview:_textField];
