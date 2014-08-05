@@ -25,6 +25,8 @@
         _label = [[UILabel alloc] initWithFrame:CGRectZero];
         _textField = [[UITextField alloc] initWithFrame:CGRectZero];
         
+        _textField.textAlignment = NSTextAlignmentRight;
+        
         [_textField addTarget:self action:@selector(textChanged) forControlEvents:UIControlEventEditingChanged];
         
         [self.contentView addSubview:_label];
