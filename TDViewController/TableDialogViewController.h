@@ -16,6 +16,7 @@
 #import "TDImageElement.h"
 #import "TDTextFieldElement.h"
 #import "TDButtonElement.h"
+#import "TDLabeledTextFieldElement.h"
 #import "TDSection.h"
 #import "TDRoot.h"
 
