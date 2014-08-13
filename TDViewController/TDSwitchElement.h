@@ -15,4 +15,6 @@
 -(id)initWithText:(NSString *)text andValue:(BOOL)value;
 -(id)initWithText:(NSString *)text andValue:(BOOL)value andKey:(NSString*)key;
 
+-(void)setValueChangeHandler:(void (^)(TDSwitchElement* element))handler;
+
 @end

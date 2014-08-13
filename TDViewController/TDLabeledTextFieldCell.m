@@ -66,6 +66,8 @@
     _textField.font = _element.textFieldFont;
     
     _textField.secureTextEntry = _element.isSecure;
+    
+    _textField.enabled = _element.enabled;
 }
 
 -(void)setElement:(TDLabeledTextFieldElement*)element

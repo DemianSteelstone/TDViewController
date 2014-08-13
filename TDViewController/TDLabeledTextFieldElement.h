@@ -17,6 +17,8 @@
 @property (nonatomic, strong) UIFont *labelFont;
 @property (nonatomic, strong) UIFont *textFieldFont;
 
+@property (nonatomic) BOOL enabled;
+
 -(id)initWithLabelText:(NSString*)label placaholder:(NSString*)placeHolder value:(NSString*)value;
 -(id)initWithLabelText:(NSString*)label placaholder:(NSString*)placeHolder value:(NSString*)value key:(NSString*)key;
 

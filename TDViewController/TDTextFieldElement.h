@@ -14,6 +14,7 @@
 @property (nonatomic, strong) NSString *value;
 @property (nonatomic) BOOL isSecure;
 @property (nonatomic, strong) UIFont *font;
+@property (nonatomic) BOOL enabled;
 
 -(id)initWithPlaceholder:(NSString*)placeholder andValue:(NSString*)value;
 +(TDTextFieldElement*)textFieldElementWithPlaceholder:(NSString*)placeholder andValue:(NSString*)value;

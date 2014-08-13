@@ -23,6 +23,7 @@
         self.placeholder = placeholder;
         self.value = value;
         self.font = [UIFont systemFontOfSize:14];
+        self.enabled = YES;
     }
     return self;
 }

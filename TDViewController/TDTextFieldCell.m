@@ -42,6 +42,8 @@
     textField.placeholder = _element.placeholder;
     textField.text = _element.value;
     textField.secureTextEntry = _element.isSecure;
+    
+    textField.enabled = _element.enabled;
 }
 
 -(void)setValueElement:(TDTextFieldElement*)element
