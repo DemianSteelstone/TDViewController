@@ -68,6 +68,10 @@
     _textField.secureTextEntry = _element.isSecure;
     
     _textField.enabled = _element.enabled;
+    if (_element.enabled)
+        _textField.textColor = [UIColor blackColor];
+    else
+        _textField.textColor = [UIColor darkGrayColor];
 }
 
 -(void)setElement:(TDLabeledTextFieldElement*)element
