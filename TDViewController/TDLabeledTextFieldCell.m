@@ -85,4 +85,9 @@
     _element.value = _textField.text;
 }
 
+-(void)setInputFocus
+{
+    [_textField becomeFirstResponder];
+}
+
 @end

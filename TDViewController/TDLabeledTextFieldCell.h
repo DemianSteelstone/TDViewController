@@ -13,5 +13,6 @@
 @interface TDLabeledTextFieldCell : UITableViewCell <UITextFieldDelegate>
 
 -(void)setElement:(TDLabeledTextFieldElement*)element;
+-(void)setInputFocus;
 
 @end

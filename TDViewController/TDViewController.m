@@ -13,6 +13,7 @@
 #import "TDElement+CellCreation.h"
 
 #import "TDTextFieldCell.h"
+#import "TDLabeledTextFieldCell.h"
 
 #import "UITableView+InputView.h"
 
@@ -181,6 +182,8 @@
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     if ([cell isKindOfClass:[TDTextFieldCell class]])
         [(TDTextFieldCell*)cell setInputFocus];
+    else if ([cell isKindOfClass:[TDLabeledTextFieldCell class]])
+        [(TDLabeledTextFieldCell*)cell setInputFocus];
     else
         [[_root elementFor:indexPath] elementDidSelected];
 }
