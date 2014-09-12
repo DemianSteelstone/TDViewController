@@ -24,6 +24,7 @@
     {
         _label = [[UILabel alloc] initWithFrame:CGRectZero];
         _switch = [[UISwitch alloc] initWithFrame:CGRectZero];
+        _label.font = [UIFont boldSystemFontOfSize:14];
         
         [_switch addTarget:self action:@selector(valueChanged) forControlEvents:UIControlEventValueChanged];
         

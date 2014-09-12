@@ -25,6 +25,7 @@
     if (self = [super initWithText:text andKey:key])
     {
         _value = value;
+        self.elementFont = [UIFont boldSystemFontOfSize:14];
     }
     
     return self;
