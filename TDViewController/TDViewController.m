@@ -83,6 +83,9 @@
     [self.view addSubview:_tableView];
     
     self.title = _root.title;
+    
+    if (style == UITableViewStyleGrouped)
+        self.view.backgroundColor = [UIColor groupTableViewBackgroundColor];
 }
 
 -(void)updateRoot:(TDRoot*)root
