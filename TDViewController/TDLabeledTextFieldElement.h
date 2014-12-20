@@ -16,6 +16,8 @@
 @property (nonatomic) BOOL isSecure;
 @property (nonatomic, strong) UIFont *labelFont;
 @property (nonatomic, strong) UIFont *textFieldFont;
+@property (nonatomic) UITextAutocapitalizationType autocapitalizationType;
+@property (nonatomic) UITextAutocorrectionType autocorrectionType;
 
 @property (nonatomic) BOOL enabled;
 

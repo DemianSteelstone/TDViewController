@@ -23,6 +23,8 @@
         
         self.textFieldFont = [UIFont systemFontOfSize:14];
         self.labelFont = [UIFont boldSystemFontOfSize:14];
+        self.autocapitalizationType = UITextAutocapitalizationTypeSentences;
+        self.autocorrectionType = UITextAutocorrectionTypeDefault;
         
         self.enabled = YES;
     }

@@ -64,6 +64,8 @@
     _textField.text = _element.value;
     _textField.placeholder = _element.placeholder;
     _textField.font = _element.textFieldFont;
+    _textField.autocapitalizationType = _element.autocapitalizationType;
+    _textField.autocorrectionType = _element.autocorrectionType;
     
     _textField.secureTextEntry = _element.isSecure;
     
