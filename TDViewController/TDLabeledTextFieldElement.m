@@ -13,7 +13,7 @@
 
 @implementation TDLabeledTextFieldElement
 
--(id)initWithLabelText:(NSString*)label placaholder:(NSString*)placeHolder value:(NSString*)value
+-(id)initWithLabelText:(NSString*)label placeholder:(NSString*)placeHolder value:(NSString*)value
 {
     if (self = [super init])
     {
@@ -31,9 +31,9 @@
     return self;
 }
 
--(id)initWithLabelText:(NSString*)label placaholder:(NSString*)placeHolder value:(NSString*)value key:(NSString*)key
+-(id)initWithLabelText:(NSString*)label placeholder:(NSString*)placeHolder value:(NSString*)value key:(NSString*)key
 {
-    if (self = [self initWithLabelText:label placaholder:placeHolder value:value])
+    if (self = [self initWithLabelText:label placeholder:placeHolder value:value])
     {
         self.key = key;
     }

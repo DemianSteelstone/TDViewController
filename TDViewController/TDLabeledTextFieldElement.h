@@ -21,7 +21,7 @@
 
 @property (nonatomic) BOOL enabled;
 
--(id)initWithLabelText:(NSString*)label placaholder:(NSString*)placeHolder value:(NSString*)value;
--(id)initWithLabelText:(NSString*)label placaholder:(NSString*)placeHolder value:(NSString*)value key:(NSString*)key;
+-(id)initWithLabelText:(NSString*)label placeholder:(NSString*)placeHolder value:(NSString*)value;
+-(id)initWithLabelText:(NSString*)label placeholder:(NSString*)placeHolder value:(NSString*)value key:(NSString*)key;
 
 @end
