@@ -25,6 +25,7 @@
         self.labelFont = [UIFont boldSystemFontOfSize:14];
         self.autocapitalizationType = UITextAutocapitalizationTypeSentences;
         self.autocorrectionType = UITextAutocorrectionTypeDefault;
+        self.clearButtonMode = UITextFieldViewModeWhileEditing;
         
         self.enabled = YES;
     }

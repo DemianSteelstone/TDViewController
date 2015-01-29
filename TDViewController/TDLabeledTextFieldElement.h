@@ -18,6 +18,7 @@
 @property (nonatomic, strong) UIFont *textFieldFont;
 @property (nonatomic) UITextAutocapitalizationType autocapitalizationType;
 @property (nonatomic) UITextAutocorrectionType autocorrectionType;
+@property (nonatomic) UITextFieldViewMode clearButtonMode;
 
 @property (nonatomic) BOOL enabled;
 

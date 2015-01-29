@@ -66,6 +66,7 @@
     _textField.font = _element.textFieldFont;
     _textField.autocapitalizationType = _element.autocapitalizationType;
     _textField.autocorrectionType = _element.autocorrectionType;
+    _textField.clearButtonMode = _element.clearButtonMode;
     
     _textField.secureTextEntry = _element.isSecure;
     
