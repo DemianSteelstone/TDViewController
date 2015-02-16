@@ -19,6 +19,7 @@
 #import "TDLabeledTextFieldElement.h"
 #import "TDSection.h"
 #import "TDRoot.h"
+#import "TDMultilineTextElement.h"
 
 #import "TDBuilder.h"
 

@@ -6,6 +6,8 @@
 //  Copyright (c) 2012 Macsoftex. All rights reserved.
 //
 
+#import <Foundation/Foundation.h>
+
 @class TDRoot;
 @class TDSection;
 @class TDElement;
