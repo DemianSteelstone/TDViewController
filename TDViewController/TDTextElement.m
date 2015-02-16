@@ -68,6 +68,7 @@
         cell.textLabel.minimumScaleFactor = 0.5;
         cell.textLabel.adjustsFontSizeToFitWidth = YES;
         cell.textLabel.textAlignment = self.textAlign;
+        cell.accessoryType = self.accessoryType;
     }
     
     cell.textLabel.text = self.text;

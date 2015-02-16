@@ -6,6 +6,8 @@
 //  Copyright (c) 2012 Macsoftex. All rights reserved.
 //
 
+#import <Foundation/Foundation.h>
+
 @class TDElement;
 
 @interface TDSection: NSObject

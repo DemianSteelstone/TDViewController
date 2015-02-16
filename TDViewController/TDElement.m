@@ -18,6 +18,7 @@
     if (self)
     {
         self.height = 44.0;
+        self.accessoryType = UITableViewCellAccessoryNone;
     }
     return self;
 }

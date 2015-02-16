@@ -97,6 +97,7 @@
     {
         cell = [TDTextFieldCell loadFromNib:self];
         cell.textField.font = self.font;
+        cell.accessoryType = self.accessoryType;
     }
     
     [cell setValueElement:self];

@@ -65,6 +65,7 @@
         cell.textLabel.font = self.elementFont;
         
         cell.textLabel.textAlignment = self.textAlign;
+        cell.accessoryType = self.accessoryType;
     }
     
     TimeHelper *th = [[TimeHelper alloc] initWithSeconds:self.value];

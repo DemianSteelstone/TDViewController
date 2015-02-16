@@ -15,6 +15,8 @@
 @property (nonatomic, getter = height) CGFloat height;
 @property (nonatomic,copy) void (^didSelectHandler)(TDElement* element);
 
+@property (nonatomic) UITableViewCellAccessoryType accessoryType;
+
 -(NSString*)toHtml;
 -(void)storeElementValueTo:(NSMutableDictionary*)dict;
 

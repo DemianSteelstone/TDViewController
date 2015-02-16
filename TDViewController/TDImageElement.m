@@ -70,6 +70,7 @@
         cell.textLabel.lineBreakMode = NSLineBreakByWordWrapping;
         
         cell.textLabel.textAlignment = self.textAlign;
+        cell.accessoryType = self.accessoryType;
     }
     
     cell.textLabel.text = self.text;
