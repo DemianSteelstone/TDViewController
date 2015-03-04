@@ -15,10 +15,10 @@
 @property (nonatomic,strong) UIFont *elementFont;
 @property (nonatomic) NSTextAlignment textAlign;
 
--(id)initWithText:(NSString*)text;
-+(TDTextElement*)elementWithText:(NSString*)text;
+-(instancetype)initWithText:(NSString*)text;
++(instancetype)elementWithText:(NSString*)text;
 
--(id)initWithText:(NSString*)text andKey:(NSString*)key;
-+(TDTextElement*)elementWithText:(NSString*)text andKey:(NSString*)key;
+-(instancetype)initWithText:(NSString*)text andKey:(NSString*)key;
++(instancetype)elementWithText:(NSString*)text andKey:(NSString*)key;
 
 @end

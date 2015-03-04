@@ -24,21 +24,21 @@
     return self;
 }
 
-+(TDTextElement*)elementWithText:(NSString*)text
++(instancetype)elementWithText:(NSString*)text
 {
-    return [[TDTextElement alloc] initWithText:text];
+    return [[self alloc] initWithText:text];
 }
 
--(id)initWithText:(NSString*)text andKey:(NSString*)key
+-(instancetype)initWithText:(NSString*)text andKey:(NSString*)key
 {
     self = [self initWithText:text];
     self.key = key;
     return self;
 }
 
-+(TDTextElement*)elementWithText:(NSString*)text andKey:(NSString*)key
++(instancetype)elementWithText:(NSString*)text andKey:(NSString*)key
 {
-    return [[TDTextElement alloc] initWithText:text andKey:key];
+    return [[self alloc] initWithText:text andKey:key];
 }
 
 -(NSString*)toHtml
