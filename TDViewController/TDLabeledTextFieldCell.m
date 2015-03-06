@@ -47,7 +47,7 @@
     self.textField.frame = textFieldFrame;
 }
 
--(void)updateCell
+-(void)updateCellContents
 {
     [super updateCellContents];
     _label.text = ((TDLabeledTextFieldElement *)self.element).labelText;
