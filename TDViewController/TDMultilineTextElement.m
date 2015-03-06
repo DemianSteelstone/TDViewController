@@ -19,9 +19,12 @@
     CGFloat width = [UITableViewCell groupedCellWidth:[UIApplication sharedApplication].statusBarOrientation];
     CGFloat height = [super height];
     
-    CGSize size = [self.text sizeWithFont:self.elementFont constrainedToSize:CGSizeMake(width, MAXFLOAT)];
+    CGRect rect = [self.text boundingRectWithSize:CGSizeMake(width, MAXFLOAT)
+                                          options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading
+                                       attributes:@{NSFontAttributeName : self.elementFont}
+                                          context:nil];
     
-    return MAX(height, size.height+6);
+    return MAX(height, rect.size.height+6);
 }
 
 #pragma mark - cell creation
