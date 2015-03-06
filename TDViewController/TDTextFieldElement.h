@@ -16,6 +16,10 @@
 @property (nonatomic, strong) UIFont *font;
 @property (nonatomic) BOOL enabled;
 
+@property (nonatomic) UITextAutocapitalizationType autocapitalizationType;
+@property (nonatomic) UITextAutocorrectionType autocorrectionType;
+@property (nonatomic) UITextFieldViewMode clearButtonMode;
+
 @property (nonatomic,copy) void (^didEndEditingHandler)(TDTextFieldElement* element);
 
 -(id)initWithPlaceholder:(NSString*)placeholder andValue:(NSString*)value;

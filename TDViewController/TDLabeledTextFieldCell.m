@@ -26,6 +26,7 @@
         _textField = [[UITextField alloc] initWithFrame:CGRectZero];
         
         _textField.textAlignment = NSTextAlignmentRight;
+        _textField.delegate = self;
         
         [_textField addTarget:self action:@selector(textChanged) forControlEvents:UIControlEventEditingChanged];
         
@@ -63,14 +64,13 @@
     
     _textField.text = _element.value;
     _textField.placeholder = _element.placeholder;
-    _textField.font = _element.textFieldFont;
+    _textField.font = _element.font;
     _textField.autocapitalizationType = _element.autocapitalizationType;
     _textField.autocorrectionType = _element.autocorrectionType;
     _textField.clearButtonMode = _element.clearButtonMode;
-    
     _textField.secureTextEntry = _element.isSecure;
-    
     _textField.enabled = _element.enabled;
+    
     if (_element.enabled)
         _textField.textColor = [UIColor blackColor];
     else
@@ -91,6 +91,21 @@
 -(void)setInputFocus
 {
     [_textField becomeFirstResponder];
+}
+
+#pragma mark - UITextFieldDelegate
+
+-(void)textFieldDidEndEditing:(UITextField *)textField
+{
+    if (_element.didEndEditingHandler)
+    {
+        _element.didEndEditingHandler(_element);
+    }
+}
+
+-(BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    return YES;
 }
 
 @end

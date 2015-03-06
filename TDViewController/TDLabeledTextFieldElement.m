@@ -15,18 +15,11 @@
 
 -(id)initWithLabelText:(NSString*)label placeholder:(NSString*)placeHolder value:(NSString*)value
 {
-    if (self = [super init])
+    if (self = [super initWithPlaceholder:placeHolder andValue:value])
     {
         self.labelText = label;
-        self.placeholder = placeHolder;
-        self.value = value;
-        
-        self.textFieldFont = [UIFont systemFontOfSize:14];
+        self.font = [UIFont systemFontOfSize:14];
         self.labelFont = [UIFont boldSystemFontOfSize:14];
-        self.autocapitalizationType = UITextAutocapitalizationTypeSentences;
-        self.autocorrectionType = UITextAutocorrectionTypeDefault;
-        self.clearButtonMode = UITextFieldViewModeWhileEditing;
-        
         self.enabled = YES;
     }
     return self;

@@ -6,21 +6,12 @@
 //  Copyright (c) 2014 Macsoftex. All rights reserved.
 //
 
-#import "TDElement.h"
+#import "TDTextFieldElement.h"
 
-@interface TDLabeledTextFieldElement : TDElement
+@interface TDLabeledTextFieldElement : TDTextFieldElement
 
 @property (nonatomic, strong) NSString *labelText;
-@property (nonatomic, strong) NSString *placeholder;
-@property (nonatomic, strong) NSString *value;
-@property (nonatomic) BOOL isSecure;
 @property (nonatomic, strong) UIFont *labelFont;
-@property (nonatomic, strong) UIFont *textFieldFont;
-@property (nonatomic) UITextAutocapitalizationType autocapitalizationType;
-@property (nonatomic) UITextAutocorrectionType autocorrectionType;
-@property (nonatomic) UITextFieldViewMode clearButtonMode;
-
-@property (nonatomic) BOOL enabled;
 
 -(id)initWithLabelText:(NSString*)label placeholder:(NSString*)placeHolder value:(NSString*)value;
 -(id)initWithLabelText:(NSString*)label placeholder:(NSString*)placeHolder value:(NSString*)value key:(NSString*)key;

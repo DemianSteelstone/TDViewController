@@ -24,6 +24,9 @@
         self.value = value;
         self.font = [UIFont systemFontOfSize:14];
         self.enabled = YES;
+        self.autocapitalizationType = UITextAutocapitalizationTypeSentences;
+        self.autocorrectionType = UITextAutocorrectionTypeDefault;
+        self.clearButtonMode = UITextFieldViewModeWhileEditing;
     }
     return self;
 }

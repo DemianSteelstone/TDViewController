@@ -46,6 +46,9 @@
     textField.placeholder = _element.placeholder;
     textField.text = _element.value;
     textField.secureTextEntry = _element.isSecure;
+    textField.autocapitalizationType = _element.autocapitalizationType;
+    textField.autocorrectionType = _element.autocorrectionType;
+    textField.clearButtonMode = _element.clearButtonMode;
     
     textField.enabled = _element.enabled;
     textField.delegate = self;
@@ -84,6 +87,11 @@
     {
         _element.didEndEditingHandler(_element);
     }
+}
+
+-(BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    return YES;
 }
 
 @end
