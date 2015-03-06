@@ -16,6 +16,8 @@
 @property (nonatomic, strong) UIFont *font;
 @property (nonatomic) BOOL enabled;
 
+@property (nonatomic,copy) void (^didEndEditingHandler)(TDTextFieldElement* element);
+
 -(id)initWithPlaceholder:(NSString*)placeholder andValue:(NSString*)value;
 +(TDTextFieldElement*)textFieldElementWithPlaceholder:(NSString*)placeholder andValue:(NSString*)value;
 

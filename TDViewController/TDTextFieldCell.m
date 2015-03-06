@@ -8,6 +8,10 @@
 
 #import "TDTextFieldCell.h"
 
+@interface TDTextFieldCell () <UITextFieldDelegate>
+
+@end
+
 @implementation TDTextFieldCell
 {
     TDTextFieldElement *_element;
@@ -44,6 +48,7 @@
     textField.secureTextEntry = _element.isSecure;
     
     textField.enabled = _element.enabled;
+    textField.delegate = self;
     
     if (_element.enabled)
         textField.textColor = [UIColor blackColor];
@@ -69,6 +74,16 @@
 -(UITextField*)textField
 {
     return textField;
+}
+
+#pragma mark - UITextFieldDelegate
+
+-(void)textFieldDidEndEditing:(UITextField *)textField
+{
+    if (_element.didEndEditingHandler)
+    {
+        _element.didEndEditingHandler(_element);
+    }
 }
 
 @end
