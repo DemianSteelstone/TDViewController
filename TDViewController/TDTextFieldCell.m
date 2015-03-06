@@ -54,7 +54,7 @@
         _textField.textColor = [UIColor darkGrayColor];
 }
 
--(void)setValueElement:(TDTextFieldElement*)element
+-(void)setElement:(TDTextFieldElement *)element
 {
     _element = element;
     [self updateCellContents];
