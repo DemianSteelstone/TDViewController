@@ -13,9 +13,6 @@
 @implementation TDLabeledTextFieldCell
 {
     UILabel *_label;
-    UITextField *_textField;
-    
-    TDLabeledTextFieldElement *_element;
 }
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
@@ -23,15 +20,8 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         _label = [[UILabel alloc] initWithFrame:CGRectZero];
-        _textField = [[UITextField alloc] initWithFrame:CGRectZero];
-        
-        _textField.textAlignment = NSTextAlignmentRight;
-        _textField.delegate = self;
-        
-        [_textField addTarget:self action:@selector(textChanged) forControlEvents:UIControlEventEditingChanged];
         
         [self.contentView addSubview:_label];
-        [self.contentView addSubview:_textField];
     }
     return self;
 }
@@ -41,7 +31,7 @@
     [super layoutSubviews];
     
     [_label sizeToFit];
-    [_textField sizeToFit];
+    [self.textField sizeToFit];
     
     CGRect labelFrame = _label.frame;
     labelFrame.origin.x = 15.0;
@@ -49,64 +39,19 @@
     
     _label.frame = labelFrame;
     
-    CGRect textFieldFrame = _textField.frame;
+    CGRect textFieldFrame = self.textField.frame;
     textFieldFrame.origin.x = 10.0 + labelFrame.size.width + labelFrame.origin.x;
     textFieldFrame.origin.y = (self.contentView.bounds.size.height - textFieldFrame.size.height)*0.5;
     textFieldFrame.size.width = self.contentView.bounds.size.width - textFieldFrame.origin.x - 15.0;
     
-    _textField.frame = textFieldFrame;
+    self.textField.frame = textFieldFrame;
 }
 
 -(void)updateCell
 {
-    _label.text = _element.labelText;
-    _label.font = _element.labelFont;
-    
-    _textField.text = _element.value;
-    _textField.placeholder = _element.placeholder;
-    _textField.font = _element.font;
-    _textField.autocapitalizationType = _element.autocapitalizationType;
-    _textField.autocorrectionType = _element.autocorrectionType;
-    _textField.clearButtonMode = _element.clearButtonMode;
-    _textField.secureTextEntry = _element.isSecure;
-    _textField.enabled = _element.enabled;
-    
-    if (_element.enabled)
-        _textField.textColor = [UIColor blackColor];
-    else
-        _textField.textColor = [UIColor darkGrayColor];
-}
-
--(void)setElement:(TDLabeledTextFieldElement*)element
-{
-    _element = element;
-    [self updateCell];
-}
-
--(void)textChanged
-{
-    _element.value = _textField.text;
-}
-
--(void)setInputFocus
-{
-    [_textField becomeFirstResponder];
-}
-
-#pragma mark - UITextFieldDelegate
-
--(void)textFieldDidEndEditing:(UITextField *)textField
-{
-    if (_element.didEndEditingHandler)
-    {
-        _element.didEndEditingHandler(_element);
-    }
-}
-
--(BOOL)textFieldShouldReturn:(UITextField *)textField
-{
-    [_textField resignFirstResponder];
-    return YES;
+    [super updateCellContents];
+    _label.text = ((TDLabeledTextFieldElement *)self.element).labelText;
+    _label.font = ((TDLabeledTextFieldElement *)self.element).labelFont;
 }
 
 @end

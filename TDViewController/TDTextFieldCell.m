@@ -13,50 +13,45 @@
 @end
 
 @implementation TDTextFieldCell
-{
-    TDTextFieldElement *_element;
-    
-    __weak IBOutlet UITextField *textField;
-}
 
-- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
+- (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-        // Initialization code
+        
+        _textField = [[UITextField alloc] initWithFrame:CGRectZero];
+        
+        _textField.textAlignment = NSTextAlignmentRight;
+        _textField.delegate = self;
+        
+        [_textField addTarget:self action:@selector(textChanged) forControlEvents:UIControlEventEditingChanged];
+        [self.contentView addSubview:_textField];
     }
     return self;
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated
+-(void)layoutSubviews
 {
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
-}
-
-+(TDTextFieldCell*)loadFromNib:(id)owner
-{
-    NSArray *array = [[NSBundle mainBundle] loadNibNamed:@"TDTextFieldCell" owner:owner options:nil];
-    return (TDTextFieldCell*)[array objectAtIndex:0];
+    [super layoutSubviews];
+    self.textField.frame = CGRectMake(0, 0, self.contentView.frame.size.width, self.contentView.frame.size.height);
 }
 
 -(void)updateCellContents
 {
-    textField.placeholder = _element.placeholder;
-    textField.text = _element.value;
-    textField.secureTextEntry = _element.isSecure;
-    textField.autocapitalizationType = _element.autocapitalizationType;
-    textField.autocorrectionType = _element.autocorrectionType;
-    textField.clearButtonMode = _element.clearButtonMode;
+    _textField.placeholder = _element.placeholder;
+    _textField.text = _element.value;
+    _textField.secureTextEntry = _element.isSecure;
+    _textField.autocapitalizationType = _element.autocapitalizationType;
+    _textField.autocorrectionType = _element.autocorrectionType;
+    _textField.clearButtonMode = _element.clearButtonMode;
     
-    textField.enabled = _element.enabled;
-    textField.delegate = self;
+    _textField.enabled = _element.enabled;
+    _textField.delegate = self;
     
     if (_element.enabled)
-        textField.textColor = [UIColor blackColor];
+        _textField.textColor = [UIColor blackColor];
     else
-        textField.textColor = [UIColor darkGrayColor];
+        _textField.textColor = [UIColor darkGrayColor];
 }
 
 -(void)setValueElement:(TDTextFieldElement*)element
@@ -65,18 +60,14 @@
     [self updateCellContents];
 }
 
-- (IBAction)textChanged:(UITextField*)sender {
-    _element.value = sender.text;
+-(void)textChanged
+{
+    _element.value = _textField.text;
 }
 
 -(void)setInputFocus
 {
-    [textField becomeFirstResponder];
-}
-
--(UITextField*)textField
-{
-    return textField;
+    [_textField becomeFirstResponder];
 }
 
 #pragma mark - UITextFieldDelegate
@@ -91,6 +82,7 @@
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField
 {
+    [_textField resignFirstResponder];
     return YES;
 }
 

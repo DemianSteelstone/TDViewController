@@ -6,13 +6,10 @@
 //  Copyright (c) 2014 Macsoftex. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "TDTextFieldCell.h"
 
 @class TDLabeledTextFieldElement;
 
-@interface TDLabeledTextFieldCell : UITableViewCell <UITextFieldDelegate>
-
--(void)setElement:(TDLabeledTextFieldElement*)element;
--(void)setInputFocus;
+@interface TDLabeledTextFieldCell : TDTextFieldCell
 
 @end

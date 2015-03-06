@@ -98,12 +98,12 @@
     TDTextFieldCell *cell = (TDTextFieldCell*)[tableView dequeueReusableCellWithIdentifier:[self cellIdentifer]];
     if (!cell)
     {
-        cell = [TDTextFieldCell loadFromNib:self];
+        cell = [[TDTextFieldCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:[self cellIdentifer]];
         cell.textField.font = self.font;
         cell.accessoryType = self.accessoryType;
     }
     
-    [cell setValueElement:self];
+    [cell setElement:self];
     
     return cell;
 }
