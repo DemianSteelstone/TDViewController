@@ -16,7 +16,7 @@
 
 -(CGFloat)height
 {
-    CGFloat width = [UITableViewCell groupedCellWidth:[UIApplication sharedApplication].statusBarOrientation];
+    CGFloat width = [UITableViewCell groupedCellWidth:[UIApplication sharedApplication].statusBarOrientation] - 20;
     CGFloat height = [super height];
     
     CGRect rect = [self.text boundingRectWithSize:CGSizeMake(width, MAXFLOAT)
