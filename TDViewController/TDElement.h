@@ -12,7 +12,6 @@
 
 @property (nonatomic,strong) NSString *key;
 
-@property (nonatomic, getter = height) CGFloat height;
 @property (nonatomic,copy) void (^didSelectHandler)(TDElement* element);
 
 @property (nonatomic) UITableViewCellAccessoryType accessoryType;
@@ -21,5 +20,7 @@
 -(void)storeElementValueTo:(NSMutableDictionary*)dict;
 
 -(void)elementDidSelected;
+
+-(CGFloat)heightForWidth:(CGFloat)width;
 
 @end
