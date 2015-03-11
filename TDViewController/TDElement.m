@@ -17,15 +17,14 @@
     self = [super init];
     if (self)
     {
-        self.height = 44.0;
         self.accessoryType = UITableViewCellAccessoryNone;
     }
     return self;
 }
 
--(CGFloat)height
+-(CGFloat)heightForWidth:(CGFloat)width
 {
-    return _height;
+    return 44.0;
 }
 
 -(NSString*)toHtml

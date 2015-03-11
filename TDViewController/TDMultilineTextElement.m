@@ -14,10 +14,9 @@
 
 @implementation TDMultilineTextElement
 
--(CGFloat)height
+-(CGFloat)heightForWidth:(CGFloat)width
 {
-    CGFloat width = [UITableViewCell groupedCellWidth:[UIApplication sharedApplication].statusBarOrientation];
-    CGFloat height = [super height];
+    CGFloat height = [super heightForWidth:width];
     
     CGRect rect = [self.text boundingRectWithSize:CGSizeMake(width, MAXFLOAT)
                                           options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading

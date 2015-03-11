@@ -11,11 +11,11 @@
 
 @interface TDTextFieldCell : UITableViewCell
 
--(UITextField*)textField;
-
-+(TDTextFieldCell*)loadFromNib:(id)owner;
--(void)setValueElement:(TDTextFieldElement*)element;
+@property (nonatomic,readonly) UITextField *textField;
+@property (nonatomic) TDTextFieldElement *element;
 
 -(void)setInputFocus;
+
+-(void)updateCellContents;
 
 @end
