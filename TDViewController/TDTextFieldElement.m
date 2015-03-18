@@ -100,9 +100,9 @@
     {
         cell = [[TDTextFieldCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:[self cellIdentifer]];
         cell.textField.font = self.font;
-        cell.accessoryType = self.accessoryType;
     }
     
+    cell.accessoryType = self.accessoryType;
     [cell setElement:self];
     
     return cell;

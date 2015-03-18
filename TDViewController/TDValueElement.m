@@ -64,9 +64,9 @@
         cell.textLabel.font = self.elementFont;
         
         cell.textLabel.textAlignment = self.textAlign;
-        cell.accessoryType = self.accessoryType;
     }
     
+    cell.accessoryType = self.accessoryType;
     cell.textLabel.text = self.text;
     cell.detailTextLabel.text = self.value;
     

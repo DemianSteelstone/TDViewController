@@ -70,9 +70,9 @@
         cell.textLabel.lineBreakMode = NSLineBreakByWordWrapping;
         
         cell.textLabel.textAlignment = self.textAlign;
-        cell.accessoryType = self.accessoryType;
     }
     
+    cell.accessoryType = self.accessoryType;
     cell.textLabel.text = self.text;
     cell.detailTextLabel.text = self.value;
     cell.imageView.image = _image;

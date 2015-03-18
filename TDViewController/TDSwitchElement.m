@@ -80,9 +80,9 @@
     if (!cell)
     {
         cell = [[TDSwitchCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:[self cellIdentifer]];
-        cell.accessoryType = self.accessoryType;
     }
     
+    cell.accessoryType = self.accessoryType;
     [cell setElement:self];
     
     return cell;
