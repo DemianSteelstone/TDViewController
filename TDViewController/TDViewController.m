@@ -28,6 +28,7 @@
     {
         self.style = tableViewStyle;
         _root = root;
+        self.shouldIntendOnKeyboardShow = YES;
         
         [[NSNotificationCenter defaultCenter] addObserver:self
                                                  selector:@selector(keyboardWillShow:)
@@ -54,6 +55,9 @@
 
 -(void)keyboardWillShow:(NSNotification*)n
 {
+    if (NO == self.shouldIntendOnKeyboardShow)
+        return;
+    
     CGRect rect = [n.userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
     double duration = [n.userInfo[UIKeyboardAnimationDurationUserInfoKey] doubleValue];
     
@@ -62,6 +66,9 @@
 
 -(void)keyboardWillHide:(NSNotification*)n
 {
+    if (NO == self.shouldIntendOnKeyboardShow)
+        return;
+    
     CGRect rect = [n.userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
     double duration = [n.userInfo[UIKeyboardAnimationDurationUserInfoKey] doubleValue];
     

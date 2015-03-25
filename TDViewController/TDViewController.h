@@ -15,6 +15,7 @@
 @property (nonatomic, readonly) TDRoot *root;
 @property (nonatomic, readonly) UITableView *tableView;
 @property (nonatomic) UITableViewStyle style;
+@property (nonatomic) BOOL shouldIntendOnKeyboardShow; // default YES
 
 -(id)initWithRoot:(TDRoot*)root tableViewStyle:(UITableViewStyle)tableViewStyle;
 
