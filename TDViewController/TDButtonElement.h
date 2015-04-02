@@ -11,6 +11,7 @@
 @interface TDButtonElement : TDElement
 
 @property (nonatomic,strong) NSString *title;
+@property (nonatomic,strong) UIColor *textColor;
 
 -(id)initWithTitle:(NSString*)title;
 +(TDButtonElement*)buttonElementWithTitle:(NSString*)title;

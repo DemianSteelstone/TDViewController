@@ -17,6 +17,7 @@
     if (self = [super init])
     {
         self.title = title;
+        self.textColor = [UIColor blackColor];
     }
     
     return self;
@@ -47,6 +48,7 @@
         cell.textLabel.minimumScaleFactor = 0.5;
         cell.textLabel.adjustsFontSizeToFitWidth = YES;
         cell.textLabel.textAlignment = NSTextAlignmentCenter;
+        cell.textLabel.textColor = self.textColor;
     }
     
     cell.accessoryType = self.accessoryType;
