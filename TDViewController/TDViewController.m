@@ -129,7 +129,12 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     TDElement *element = [_root elementFor:indexPath];
-    return [element createCellIn:tableView indexPath:indexPath];
+    UITableViewCell *cell = [element createCellIn:tableView indexPath:indexPath];
+    
+    if (NO == [element isKindOfClass:NSClassFromString(@"TDButtonElement")])
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    
+    return cell;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
