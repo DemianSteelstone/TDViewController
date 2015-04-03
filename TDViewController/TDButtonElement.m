@@ -48,9 +48,9 @@
         cell.textLabel.minimumScaleFactor = 0.5;
         cell.textLabel.adjustsFontSizeToFitWidth = YES;
         cell.textLabel.textAlignment = NSTextAlignmentCenter;
-        cell.textLabel.textColor = self.textColor;
     }
     
+    cell.textLabel.textColor = self.textColor;    
     cell.accessoryType = self.accessoryType;
     cell.textLabel.text = self.title;
     
