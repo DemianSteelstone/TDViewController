@@ -12,6 +12,7 @@
 
 @property (nonatomic,strong) NSString *title;
 @property (nonatomic,strong) UIColor *textColor;
+@property (nonatomic,strong) UIFont *textFont;
 
 -(id)initWithTitle:(NSString*)title;
 +(TDButtonElement*)buttonElementWithTitle:(NSString*)title;

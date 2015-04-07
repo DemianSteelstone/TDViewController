@@ -18,6 +18,7 @@
     {
         self.title = title;
         self.textColor = [UIColor blackColor];
+        self.textFont = [UIFont boldSystemFontOfSize:17];
     }
     
     return self;
@@ -44,12 +45,12 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
                                       reuseIdentifier:cellIdentifer];
         cell.selectionStyle = UITableViewCellSelectionStyleBlue;
-        cell.textLabel.font = [UIFont boldSystemFontOfSize:17];
         cell.textLabel.minimumScaleFactor = 0.5;
         cell.textLabel.adjustsFontSizeToFitWidth = YES;
         cell.textLabel.textAlignment = NSTextAlignmentCenter;
     }
-    
+
+    cell.textLabel.font = self.textFont;
     cell.textLabel.textColor = self.textColor;    
     cell.accessoryType = self.accessoryType;
     cell.textLabel.text = self.title;
