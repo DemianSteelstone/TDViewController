@@ -29,18 +29,23 @@
         self.style = tableViewStyle;
         _root = root;
         self.shouldIntendOnKeyboardShow = YES;
-        
-        [[NSNotificationCenter defaultCenter] addObserver:self
-                                                 selector:@selector(keyboardWillShow:)
-                                                     name:UIKeyboardWillShowNotification
-                                                   object:nil];
+
         [[NSNotificationCenter defaultCenter] addObserver:self
                                                  selector:@selector(keyboardWillHide:)
                                                      name:UIKeyboardWillHideNotification
                                                    object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(keyboardDidChange:)
+                                                     name:UIKeyboardDidChangeFrameNotification
+                                                   object:nil];
     }
     
     return self;
+}
+
+-(void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 - (void)didReceiveMemoryWarning
@@ -53,17 +58,6 @@
 
 #pragma mark -
 
--(void)keyboardWillShow:(NSNotification*)n
-{
-    if (NO == self.shouldIntendOnKeyboardShow)
-        return;
-    
-    CGRect rect = [n.userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
-    double duration = [n.userInfo[UIKeyboardAnimationDurationUserInfoKey] doubleValue];
-    
-    [self.tableView keyboardWillShow:rect duration:duration];
-}
-
 -(void)keyboardWillHide:(NSNotification*)n
 {
     if (NO == self.shouldIntendOnKeyboardShow)
@@ -75,6 +69,16 @@
     [self.tableView keyboardWillHide:rect duration:duration];
 }
 
+-(void)keyboardDidChange:(NSNotification*)n
+{
+    if (NO == self.shouldIntendOnKeyboardShow)
+        return;
+    
+    CGRect rect = [n.userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
+    
+    [self.tableView keyboardDidShow:rect];
+}
+
 #pragma mark - View lifecycle
 
 - (void)viewDidLoad
@@ -84,7 +88,7 @@
     _tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:self.style];
     _tableView.delegate = self;
     _tableView.dataSource = self;
-    
+
     _tableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     
     [self.view addSubview:_tableView];
