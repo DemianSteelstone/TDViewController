@@ -17,6 +17,7 @@
     {
         self.elementFont = [UIFont systemFontOfSize:17];
         self.textAlign = NSTextAlignmentLeft;
+        self.adjustFontSizeToFitWidth = YES;
         
         self.text = text;
         self.key = text;
@@ -66,7 +67,7 @@
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         cell.textLabel.font = self.elementFont;
         cell.textLabel.minimumScaleFactor = 0.5;
-        cell.textLabel.adjustsFontSizeToFitWidth = YES;
+        cell.textLabel.adjustsFontSizeToFitWidth = self.adjustFontSizeToFitWidth;
         cell.textLabel.textAlignment = self.textAlign;
     }
     

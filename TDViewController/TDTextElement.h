@@ -14,6 +14,7 @@
 
 @property (nonatomic,strong) UIFont *elementFont;
 @property (nonatomic) NSTextAlignment textAlign;
+@property (nonatomic,getter = adjustsFontSizeToFitWidth) BOOL adjustFontSizeToFitWidth;
 
 -(instancetype)initWithText:(NSString*)text;
 +(instancetype)elementWithText:(NSString*)text;
