@@ -23,6 +23,7 @@
         self.placeholder = placeholder;
         self.value = value;
         self.font = [UIFont systemFontOfSize:14];
+        self.textAlignment = NSTextAlignmentRight;
         self.enabled = YES;
         self.autocapitalizationType = UITextAutocapitalizationTypeSentences;
         self.autocorrectionType = UITextAutocorrectionTypeDefault;
@@ -100,6 +101,7 @@
     {
         cell = [[TDTextFieldCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:[self cellIdentifer]];
         cell.textField.font = self.font;
+        cell.textField.textAlignment = self.textAlignment;
     }
     
     cell.accessoryType = self.accessoryType;

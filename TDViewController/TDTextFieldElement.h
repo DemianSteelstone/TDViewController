@@ -14,6 +14,7 @@
 @property (nonatomic, strong) NSString *value;
 @property (nonatomic) BOOL isSecure;
 @property (nonatomic, strong) UIFont *font;
+@property (nonatomic) NSTextAlignment textAlignment;
 @property (nonatomic) BOOL enabled;
 
 @property (nonatomic) UITextAutocapitalizationType autocapitalizationType;

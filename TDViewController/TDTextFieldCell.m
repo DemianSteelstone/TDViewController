@@ -33,7 +33,7 @@
 -(void)layoutSubviews
 {
     [super layoutSubviews];
-    self.textField.frame = CGRectMake(0, 0, self.contentView.frame.size.width, self.contentView.frame.size.height);
+    self.textField.frame = CGRectMake(15, 0, self.contentView.frame.size.width - 15, self.contentView.frame.size.height);
 }
 
 -(void)updateCellContents
@@ -71,6 +71,13 @@
 }
 
 #pragma mark - UITextFieldDelegate
+
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField
+{
+    if (_element.didSelectHandler)
+        _element.didSelectHandler(_element);
+    return YES;
+}
 
 -(void)textFieldDidEndEditing:(UITextField *)textField
 {
