@@ -33,7 +33,8 @@
 -(void)layoutSubviews
 {
     [super layoutSubviews];
-    self.textField.frame = CGRectMake(15, 0, self.contentView.frame.size.width - 15, self.contentView.frame.size.height);
+    const CGFloat indent = 20;
+    self.textField.frame = CGRectMake(indent, 0, self.contentView.frame.size.width - indent, self.contentView.frame.size.height);
 }
 
 -(void)updateCellContents
