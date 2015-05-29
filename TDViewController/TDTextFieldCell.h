@@ -6,10 +6,10 @@
 //  Copyright (c) 2012 Macsoftex. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "TDTableCell.h"
 #import "TDTextFieldElement.h"
 
-@interface TDTextFieldCell : UITableViewCell
+@interface TDTextFieldCell : TDTableCell
 
 @property (nonatomic,readonly) UITextField *textField;
 @property (nonatomic) TDTextFieldElement *element;

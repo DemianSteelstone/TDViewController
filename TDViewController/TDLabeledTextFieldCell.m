@@ -34,7 +34,7 @@
     [self.textField sizeToFit];
     
     CGRect labelFrame = _label.frame;
-    labelFrame.origin.x = 15.0;
+    labelFrame.origin.x = self.contentOffset;
     labelFrame.origin.y = (self.contentView.bounds.size.height - labelFrame.size.height)*0.5;
     
     _label.frame = labelFrame;
@@ -42,7 +42,7 @@
     CGRect textFieldFrame = self.textField.frame;
     textFieldFrame.origin.x = 10.0 + labelFrame.size.width + labelFrame.origin.x;
     textFieldFrame.origin.y = (self.contentView.bounds.size.height - textFieldFrame.size.height)*0.5;
-    textFieldFrame.size.width = self.contentView.bounds.size.width - textFieldFrame.origin.x - 15.0;
+    textFieldFrame.size.width = self.contentView.bounds.size.width - textFieldFrame.origin.x - self.contentOffset;
     
     self.textField.frame = textFieldFrame;
 }
