@@ -9,6 +9,7 @@
 #import "TDButtonElement.h"
 
 #import "TDElement+CellCreation.h"
+#import "TDTableCell.h"
 
 @implementation TDButtonElement
 
@@ -39,10 +40,10 @@
 -(UITableViewCell*)createCellIn:(UITableView *)tableView indexPath:(NSIndexPath *)indexPath
 {
     NSString *cellIdentifer = [self cellIdentifer];
-    UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifer];
+    TDTableCell* cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifer];
     if (!cell)
     {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
+        cell = [[TDTableCell alloc] initWithStyle:UITableViewCellStyleDefault
                                       reuseIdentifier:cellIdentifer];
         cell.selectionStyle = UITableViewCellSelectionStyleBlue;
         cell.textLabel.minimumScaleFactor = 0.5;
