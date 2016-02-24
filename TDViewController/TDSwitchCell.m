@@ -25,6 +25,7 @@
         _label = [[UILabel alloc] initWithFrame:CGRectZero];
         _switch = [[UISwitch alloc] initWithFrame:CGRectZero];
         _label.font = [UIFont boldSystemFontOfSize:14];
+        _label.numberOfLines = 2;
         
         [_switch addTarget:self action:@selector(valueChanged) forControlEvents:UIControlEventValueChanged];
         
@@ -59,13 +60,15 @@
 -(void)layoutSubviews
 {
     [super layoutSubviews];
-    
-    [_label sizeToFit];
+
     [_switch sizeToFit];
-    
+
+    CGFloat labelWidth = self.contentView.bounds.size.width - 2*15.0 - _switch.frame.size.width - 5.0;
+    CGSize labelSize = [_label sizeThatFits:CGSizeMake(labelWidth, 0)];
     CGRect labelFrame = _label.frame;
     labelFrame.origin.x = 15.0;
-    labelFrame.size.width = self.contentView.bounds.size.width - 2*15.0 - _switch.frame.size.width - 5.0;
+    labelFrame.size.width = labelWidth;
+    labelFrame.size.height = labelSize.height;
     labelFrame.origin.y = (self.contentView.bounds.size.height - labelFrame.size.height)*0.5;
     
     _label.frame = labelFrame;
