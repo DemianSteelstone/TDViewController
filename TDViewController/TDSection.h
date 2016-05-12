@@ -13,6 +13,7 @@
 @interface TDSection: NSObject
 
 @property (nonatomic,strong) NSString *title;
+@property (nonatomic,strong) NSString *footer;
 
 -(id)initWithTitle:(NSString *)title;
 +(TDSection*)sectionWithTitle:(NSString*)title;

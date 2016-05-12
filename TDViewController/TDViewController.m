@@ -158,6 +158,12 @@
     return tdSection.title;
 }
 
+-(NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section
+{
+    TDSection *tdSection = [_root.sections objectAtIndex:section];
+    return tdSection.footer;
+}
+
 //-(UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 //{
 //    TDSection *tdSection = [_root.sections objectAtIndex:section];
